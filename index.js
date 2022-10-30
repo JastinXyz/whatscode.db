@@ -1,11 +1,20 @@
 const fs = require("fs");
-const path = "./db.json";
+var path = "./db.json";
 
-if (!fs.existsSync(path)) {
-  fs.writeFileSync(path, "{}");
+if (path) {
+  if (!fs.existsSync(path)) {
+    fs.writeFileSync(path, "{}");
+  }
 }
 
 module.exports = {
+  init: function init(pth) {
+    path = pth;
+    fs.existsSync('./db.json') ? fs.unlinkSync('./db.json') : ""
+    if (!fs.existsSync(path)) {
+      fs.writeFileSync(path, "{}");
+    }
+  },
   set: function set(name, v) {
     let content = JSON.parse(fs.readFileSync(path, "utf8"));
 
@@ -31,6 +40,6 @@ module.exports = {
   has: function has(name) {
     let content = JSON.parse(fs.readFileSync(path, "utf8"));
 
-    return content[name]? true : false;
-  }
+    return content[name] ? true : false;
+  },
 };
