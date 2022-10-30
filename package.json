@@ -1,0 +1,19 @@
+{
+  "name": "whatscode.db",
+  "version": "1.5.0",
+  "description": "Simple and easy-to-use json database.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "json",
+    "jsondb",
+    "database",
+    "db",
+    "json-database",
+    "easy-database"
+  ],
+  "author": "JstnLT <jastinlinggar@gmail.com>",
+  "license": "MIT"
+}
